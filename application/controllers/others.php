@@ -22,6 +22,9 @@ class Others_Controller extends Base_Controller {
 		// Obtenemos el ID del usuario.
 		$user_id = User::where('username','=',$username)->only('id');
 
+		// Obtenemos el nombre del usuario.
+		$name = User::where('username','=',$username)->only('name');
+
 		$following = null;
 		$followers = 0;
 
@@ -53,6 +56,7 @@ class Others_Controller extends Base_Controller {
 			return View::make('others.profile')
 						->with('username', $username)
 						->with('user_id', $user_id)
+						->with('name', $name)
 						->with('following', $following)
 						->with('followers', $followers)
 						->with('count', $nimkus_count)

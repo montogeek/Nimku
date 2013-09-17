@@ -12,7 +12,7 @@
         </a>
       </div>
       <div class="span3">
-        <h1>{{ Auth::user()->name }} </h1> 
+        <h1>{{ $name }} </h1> 
         <h3>@{{ $username; }}</h3>
         @if ( Auth::user() && ($following == false))
           {{ Form::open('user/follow', 'POST');}}
