@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="span4 offset4">
-  <p class="lead">@{{ $username; }} ha escrito</p>
 <div class="row">
   <div class="span4 well">
     <div class="row">
@@ -37,7 +36,7 @@
 
 <div class="row">
   <div class="span4 well">
-    <p class="lead"> Nimkus anteriores</p>
+    <p class="lead"> Nimkus recientes</p>
 
     @foreach ($nimkus -> results as $nimku)
       <hr />

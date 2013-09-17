@@ -34,6 +34,11 @@
 
 Route::any('others/(:any)', 'others@show');
 Route::any('nimku/(:any)', 'nimku@show');
+Route::get('api/nimkus/', 'api@nimkus');
+Route::get('api/users/', 'api@users');
+Route::get('api/byuser/(:any)', 'api@nimkusbyuser');
+Route::get('api/search/nimkus/(:any)', 'api@nimkusbytext');
+Route::get('api/search/users/(:any)', 'api@usersbyname');
 Route::controller(Controller::detect());
 
 /*
