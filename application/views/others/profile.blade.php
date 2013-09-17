@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="span4 offset4">
-  <p class="lead">@{{ $username; }} ha escrito</p>
 <div class="row">
   <div class="span4 well">
     <div class="row">
@@ -12,7 +11,7 @@
         </a>
       </div>
       <div class="span3">
-        <h1>{{ Auth::user()->name }} </h1> 
+        <h1>{{ $name }} </h1> 
         <h3>@{{ $username; }}</h3>
         @if ( Auth::user() && ($following == false))
           {{ Form::open('user/follow', 'POST');}}
@@ -37,13 +36,13 @@
 
 <div class="row">
   <div class="span4 well">
-    <p class="lead"> Nimkus anteriores</p>
+    <p class="lead"> Nimkus recientes</p>
 
     @foreach ($nimkus -> results as $nimku)
       <hr />
       <div>
         <p>{{ $nimku->nimku }}</p>
-        <span class="badge pull-right">El {{ $nimku->updated_at }}</span>
+        <a href="{{action('nimku@show', array($nimku->id));}}" class="badge pull-right" title="{{ $nimku->updated_at }}">{{ Date::torelative($nimku->updated_at) }}</a>
         <p>&nbsp;</p>
       </div>
     @endforeach
