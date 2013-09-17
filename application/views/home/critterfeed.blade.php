@@ -11,7 +11,7 @@
       <div class="span5">
         <h3><a href="{{action('others@show', array($nimku->user->username)); }}">{{ $nimku->user->username }}</a></h3>
         <p>{{ $nimku->nimku; }}</p>
-        <span class="badge pull-right">{{ $nimku->updated_at; }}</span>
+        <a href="{{action('nimku@show', array($nimku->id));}}" class="badge pull-right" title="{{ $nimku->updated_at }}">{{ Date::torelative($nimku->updated_at) }}</a>
         <span class="badge badge-warning">{{ Nimku::where('user_id','=',$nimku->user->id)->count(); }} nimkus</span>
         <span class="badge badge-info">{{ Follower::where('following_id','=',$nimku->user->id)->count(); }} seguidores</span>
       </div>

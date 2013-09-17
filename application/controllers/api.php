@@ -2,6 +2,10 @@
 class Api_Controller extends Base_Controller{
 	public $restful = true;
 
+	public function get_index(){
+		return View::make('api.home');
+	}
+
 	public function get_nimkus(){
 
 		//Traer todos los nimkus
