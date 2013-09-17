@@ -43,7 +43,7 @@
       <hr />
       <div>
         <p>{{ $nimku->nimku }}</p>
-        <span class="badge pull-right">El {{ $nimku->updated_at }}</span>
+        <a href="{{action('nimku@show', array($nimku->id));}}" class="badge pull-right" title="{{ $nimku->updated_at }}">{{ Date::torelative($nimku->updated_at) }}</a>
         <p>&nbsp;</p>
       </div>
     @endforeach

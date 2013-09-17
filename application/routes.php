@@ -33,6 +33,7 @@
 */
 
 Route::any('others/(:any)', 'others@show');
+Route::any('nimku/(:any)', 'nimku@show');
 Route::controller(Controller::detect());
 
 /*
